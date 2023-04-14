@@ -1,10 +1,16 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Game {
+
+   static Parser p = new Parser();
+    static Player player = new Player();
+
     public static void run() {
+
         System.out.println("Initializing");
-        Player player = new Player();
 
         Map<String, Room> rooms = new HashMap<>();
 
@@ -21,11 +27,19 @@ public class Game {
 
 
         // Game loop
+        while(player.isAlive){
 
-        System.out.println("Running");
-        System.out.println("Currently in " + player.getCurrentRoom().getName());
-        player.travel(rooms.get("room2"));
-        System.out.println("Currently in " + player.getCurrentRoom().getName());
 
+        System.out.println("Input>");
+        Scanner scanner = new Scanner(System.in);
+        String input =scanner.nextLine();
+        System.out.println(p.in(input));
+
+        if(input.equals("quit")){
+            player.isAlive=false;
+        }
+
+        }
     }
+
 }
