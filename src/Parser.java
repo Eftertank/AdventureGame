@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Parser {
-
-    //method figuring how many arguments that were used and redirects the string accordingly
+    public Parser(Room room) {
+    }
+//method figuring how many arguments that were used and redirects the string accordingly
 
     static String in(String input) {
 

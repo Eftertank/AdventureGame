@@ -4,9 +4,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Game {
-
-   static Parser p = new Parser();
     static Player player = new Player();
+    static Parser p = new Parser(player.getCurrentRoom());
 
     public static void run() {
 
