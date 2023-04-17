@@ -3,7 +3,6 @@ import java.util.Map;
 
 public class Room extends Thing {
     private Map<String, Room> exits;
-    private Map<String,>
 
     public Room(String name, String desc) {
         this.name = name;
@@ -19,5 +18,6 @@ public class Room extends Thing {
     public Room getExit(String path) {
 
         return exits.get(path);
+
     }
 }
