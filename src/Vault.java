@@ -33,8 +33,7 @@ public class Vault {
 
         rooms.get("room1").addExit("secret tunnel", rooms.get("room2"));
 
-        //Commands
-        
+        // Commands
         commands.put("no", new Command("no",Vault::no));
         commands.put("secret tunnel", new Command("secret tunnel",Vault::secretTunnel));
 
