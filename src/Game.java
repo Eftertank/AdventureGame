@@ -2,9 +2,6 @@ import java.util.Scanner;
 
 public class Game {
     static Player player = new Player();
-    static Vault v = new Vault();
-    static Parser p = new Parser();
-
     public static void run() {
         try {
             System.out.println("Initializing");
@@ -12,7 +9,7 @@ public class Game {
 
             // Setup player w first room
             player.setCurrentRoom(Vault.getRooms().get("room1"));
-            System.out.println(player.getCurrentRoom().toString());
+            System.out.println(player.getCurrentRoom().desc);
 
             // Game loop
             while(player.isAlive){
@@ -25,6 +22,7 @@ public class Game {
                     player.isAlive=false;
                 }
             }
+
         } catch (NullPointerException e) {
 
             // Log the exception message

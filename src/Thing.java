@@ -7,7 +7,6 @@ public class Thing {
     String desc;
 
     // Setters
-
     public void setName(String name) {
         this.name = name;
     }
@@ -17,7 +16,6 @@ public class Thing {
     }
 
     // Getters
-
     public String getName() {
         return name;
     }
