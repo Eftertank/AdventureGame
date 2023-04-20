@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Room extends Thing {
     private Map<String, Room> exits;
     private Map<String, Command> commands;
+    private List<String> dirs;
 
     public Map<String, Command> getCommands() {
         return commands;
@@ -18,6 +21,7 @@ public class Room extends Thing {
         this.desc = desc;
         this.exits = new HashMap<>();
         this.commands = new HashMap<>();
+        this.dirs = new ArrayList<>();
     }
 
     public void addExit(String string, Room room) {
@@ -36,9 +40,18 @@ public class Room extends Thing {
         commands.put("quit", new Command(this::quit));
         commands.put("go", new Command(this::go));
         commands.put("north", new Command(this::north));
+        dirs.add("north");
         commands.put("east", new Command(this::east));
+        dirs.add("east");
         commands.put("south", new Command(this::south));
+        dirs.add("south");
         commands.put("west", new Command(this::west));
+        dirs.add("west");
+
+
+
+
+
 
     }
     public void addCommand(String string,Command command){
@@ -48,6 +61,16 @@ public class Room extends Thing {
 // Commands ///////////////////////////////////////////////////////
     private void go(String s) {
         System.out.println("This triggers the go command");
+        List<String> input = List.of(s.trim().split("//s"));
+        String output = "string";
+        for (int i = 1; i < input.size(); i++) {
+            switch (input.get(i)){
+                case "north":north(s);
+                case "east":output="east";
+                case "south":output="south";
+                case "west":output="west";
+            }
+        }
     }
     private void north(String s) {
         System.out.println("This triggers the north command");
