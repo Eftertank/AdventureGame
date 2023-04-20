@@ -1,11 +1,9 @@
 import java.util.function.Consumer;
 
 public class Command {
-    private String name;
     private Consumer<String> action;
 
-    public Command(String name, Consumer<String> action) {
-        this.name = name;
+    public Command(Consumer<String> action) {
         this.action = action;
     }
 

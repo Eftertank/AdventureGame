@@ -11,8 +11,10 @@ public class Game {
             player.setCurrentRoom(Vault.getRooms().get("room1"));
             System.out.println(player.getCurrentRoom().desc);
 
+
             // Game loop
             while(player.isAlive){
+                player.getCurrentRoom().Archive();
                 System.out.println("Input>");
                 Scanner scanner = new Scanner(System.in);
                 String input = scanner.nextLine();
