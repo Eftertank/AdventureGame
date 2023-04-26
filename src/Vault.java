@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -6,13 +7,10 @@ public class Vault {
     public static Map<String, Room> getRooms() {
         return rooms;
     }
-
     public static void setRooms(Map<String, Room> rooms) {
         Vault.rooms = rooms;
     }
-
     static Map<String, Room> rooms = new HashMap<>();
-
     static void Archive() {
 
 // Rooms
@@ -27,13 +25,13 @@ public class Vault {
     }
 
 // Unique Commands ///////////////////////////////////////////////////////
-    private static void secretTunnel(String s) {
+    private static void secretTunnel(List<String> input) {
         Game.player.travel(rooms.get("room2"));
         System.out.println("You travel through the secret tunnel and arrive at the new destination");
         System.out.println(Game.player.getCurrentRoom().desc);
     }
 
-    static void go(String s) {
+    static void go(List<String> input) {
         System.out.println("This triggers the go command");
 
     }

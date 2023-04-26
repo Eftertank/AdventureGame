@@ -59,35 +59,36 @@ public class Room extends Thing {
     }
 
 // Commands ///////////////////////////////////////////////////////
-    private void go(String s) {
+    private void go(List<String> input) {
         System.out.println("This triggers the go command");
-        List<String> input = List.of(s.trim().split("//s"));
         String output = "string";
-        for (int i = 1; i < input.size(); i++) {
+        for (int i = 0; i < input.size(); i++) {
+            System.out.println("for loop started string var is "+ input);
             switch (input.get(i)){
-                case "north":north(s);
+                case "north":output="east";
                 case "east":output="east";
                 case "south":output="south";
                 case "west":output="west";
             }
         }
+        System.out.println("For loop ended");
     }
-    private void north(String s) {
+    private void north(List<String> input) {
         System.out.println("This triggers the north command");
     }
-    private void east(String s) {
+    private void east(List<String> input) {
         System.out.println("This triggers the east command");
     }
-    private void south(String s) {
+    private void south(List<String> input) {
         System.out.println("This triggers the south command");
     }
-    private void west(String s) {
+    private void west(List<String> input) {
         System.out.println("This triggers the west command");
     }
-    private void no(String s) {
+    private void no(List<String> input) {
         System.out.println("No such command");
     }
-    private void quit(String s) {
+    private void quit(List<String> input) {
         System.out.println("Goodbye");
     }
 
