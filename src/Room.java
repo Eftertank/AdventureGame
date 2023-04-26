@@ -62,7 +62,7 @@ public class Room extends Thing {
     private void go(List<String> input) {
         System.out.println("This triggers the go command");
         String output = "string";
-        for (int i = 0; i < input.size(); i++) {
+        for (int i = 1; i < input.size(); i++) {
             System.out.println("for loop started string var is "+ input);
             switch (input.get(i)){
                 case "north":output="east";
@@ -70,6 +70,7 @@ public class Room extends Thing {
                 case "south":output="south";
                 case "west":output="west";
             }
+
         }
         System.out.println("For loop ended");
     }
