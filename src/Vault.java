@@ -30,9 +30,4 @@ public class Vault {
         System.out.println("You travel through the secret tunnel and arrive at the new destination");
         System.out.println(Game.player.getCurrentRoom().desc);
     }
-
-    static void go(List<String> input) {
-        System.out.println("This triggers the go command");
-
     }
-}
