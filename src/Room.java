@@ -64,13 +64,12 @@ public class Room extends Thing {
         String output = "string";
         for (int i = 1; i < input.size(); i++) {
             System.out.println("for loop started string var is "+ input);
-            switch (input.get(i)){
-                case "north":output="east";
-                case "east":output="east";
-                case "south":output="south";
-                case "west":output="west";
+            switch (input.get(i)) {
+                case "north" -> north(input);
+                case "east" -> east(input);
+                case "south" -> south(input);
+                case "west" -> west(input);
             }
-
         }
         System.out.println("For loop ended");
     }
