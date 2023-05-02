@@ -41,11 +41,15 @@ public class Room extends Thing {
         commands.put("go", new Command(this::go));
         commands.put("north", new Command(this::north));
         dirs.add("north");
+        commands.put("n", new Command(this::north));
         commands.put("east", new Command(this::east));
+        commands.put("e", new Command(this::east));
         dirs.add("east");
         commands.put("south", new Command(this::south));
+        commands.put("s", new Command(this::south));
         dirs.add("south");
         commands.put("west", new Command(this::west));
+        commands.put("w", new Command(this::west));
         dirs.add("west");
 
 
@@ -65,10 +69,10 @@ public class Room extends Thing {
         for (int i = 1; i < input.size(); i++) {
             System.out.println("for loop started string var is "+ input);
             switch (input.get(i)) {
-                case "north" -> north(input);
-                case "east" -> east(input);
-                case "south" -> south(input);
-                case "west" -> west(input);
+                case "north", "n" -> north(input);
+                case "east", "e" -> east(input);
+                case "south", "s" -> south(input);
+                case "west", "w" -> west(input);
             }
         }
         System.out.println("For loop ended");
